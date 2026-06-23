@@ -17,6 +17,16 @@ function App() {
 
   return (
     <div style={{ padding: 20 }}>
+      <div>
+        <select onChange={(e) => setAno(Number(e.target.value))}>
+          {Array.from({ length: 15 }, (_, i) => 2009 + i).map(a => (
+            <option key={a} value={a}>
+              {a}
+            </option>
+           ))}
+        </select>
+      </div>
+
       <Questao questao={questaoAtual} />
 
       <button onClick={() => setIndex(i => Math.max(0, i - 1))}>
