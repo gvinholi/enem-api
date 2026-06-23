@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Questao from "./components/Questao";
 
 function App() {
   const [ano, setAno] = useState(2023);
@@ -7,13 +8,14 @@ function App() {
   useEffect(() => {
     fetch(`/enem_${ano}.json`)
       .then((res) => res.json())
-      .then((data) => setQuestoes(data));
+      .then(setQuestoes);
   }, [ano]);
+
+  if (!questoes.length) return <p>Carregando...</p>;
 
   return (
     <div style={{ padding: 20 }}>
-      <h1>ENEM API</h1>
-      <p>Total: {questoes.length}</p>
+      <Questao questao={questoes[0]} />
     </div>
   );
 }
