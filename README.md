@@ -1,21 +1,157 @@
-<<<<<<< HEAD
-# enem-api
-Sistema de Perguntas do Enem
-=======
-# React + Vite
+# 📚 ENEM API – Plataforma de Estudos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma aplicação web desenvolvida em React que consome questões reais do ENEM (2009–2023), permitindo navegação, visualização e correção automática das respostas.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Demonstração
 
-## React Compiler
+👉 Acesse o projeto online:  
+https://enemonline.vercel.app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🎯 Objetivo do projeto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
->>>>>>> f9400ba (chore: initialize Vite React project structure)
+Este projeto tem como objetivo:
+
+- Consumir e estruturar dados reais de questões do ENEM
+- Criar uma interface moderna para estudo
+- Permitir navegação entre questões por ano
+- Implementar sistema de respostas e correção automática
+- Simular uma plataforma de estudos estilo QConcursos
+
+---
+
+## 🧠 Funcionalidades
+
+✔ Seleção de ano (2009–2023)  
+✔ Carregamento dinâmico de questões  
+✔ Renderização de enunciados com Markdown (GFM)  
+✔ Exibição de imagens das questões e alternativas  
+✔ Sistema de múltipla escolha interativo  
+✔ Correção automática de respostas  
+✔ Destaque de resposta correta/incorreta  
+✔ Navegação entre questões (anterior/próxima)
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+- React
+- Vite
+- Tailwind CSS
+- React Markdown
+- remark-gfm
+- JavaScript (ES6+)
+
+---
+
+## 📁 Estrutura do projeto
+
+```
+enem-api/
+├── public/
+│   ├── enem_2009.json
+│   ├── enem_2010.json
+│   ├── ...
+│   └── enem_2023.json
+│
+├── src/
+│   ├── components/
+│   │   └── Questao.jsx
+│   │
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── index.html
+├── package.json
+└── tailwind.config.js
+```
+
+---
+
+## ⚙️ Como rodar localmente
+
+### 1. Clonar o repositório
+
+```bash
+git clone https://github.com/SEU_USUARIO/enem-api.git
+cd enem-api
+```
+
+---
+
+### 2. Instalar dependências
+
+```bash
+npm install
+```
+
+---
+
+### 3. Rodar o projeto
+
+```bash
+npm run dev
+```
+
+Acesse:
+http://localhost:5173
+
+---
+
+## 📦 Build para produção
+
+```bash
+npm run build
+```
+
+---
+
+## 🌐 Deploy (Vercel)
+
+1. Acesse https://vercel.com  
+2. Importe o repositório do GitHub  
+3. Configure automaticamente (Vite detectado)  
+4. Clique em Deploy  
+
+---
+
+## 📌 Formato dos dados
+
+```json
+{
+  "id": "2023-1",
+  "ano": 2023,
+  "numero": 1,
+  "disciplina": "linguagens",
+  "lingua": "espanhol",
+  "contexto": "Texto base...",
+  "introducao_alternativas": "Pergunta...",
+  "imagens": [],
+  "alternativas": [
+    {
+      "letter": "A",
+      "text": "Alternativa A"
+    }
+  ],
+  "gabarito": "A"
+}
+```
+
+---
+
+## 📈 Melhorias futuras
+
+- Sistema de login
+- Salvamento de progresso
+- Modo simulado com timer
+- Filtro por disciplina
+- Backend com banco de dados
+
+---
+
+## 🧑‍💻 Autor
+
+Gabriel Vinholi
